@@ -51,3 +51,28 @@ def register_view(request):
     else:
         form = UserCreationForm()
     return render(request, "relationship_app/register.html", {"form": form})
+
+from django.contrib.auth.decorators import user_passes_test, login_required
+from django.shortcuts import render
+from .models import UserProfile
+
+def check_role(role):
+    def decorator(user):
+        return hasattr(user, 'userprofile') and user.userprofile.role == role
+    return decorator
+
+@login_required
+@user_passes_test(check_role('Admin'))
+def admin_view(request):
+    return render(request, 'relationship_app/admin_view.html')
+
+@login_required
+@user_passes_test(check_role('Librarian'))
+def librarian_view(request):
+    return render(request, 'relationship_app/librarian_view.html')
+
+@login_required
+@user_passes_test(check_role('Member'))
+def member_view(request):
+    return render(request, 'relationship_app/member_view.html')
+
