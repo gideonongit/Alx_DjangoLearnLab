@@ -3,6 +3,10 @@ from django.views.generic.detail import DetailView
 from .models import Book, Library  # ✅ Required by checker
 from .models import Library
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import user_passes_test, login_required
+from django.shortcuts import render
+from .models import UserProfile
+
 
 # ✅ Function-based view to list all books
 def list_books(request):
