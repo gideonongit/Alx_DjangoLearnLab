@@ -7,6 +7,8 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from django.shortcuts import render
 from .models import UserProfile
 
+from django.contrib.auth.decorators import permission_required
+
 
 # ✅ Function-based view to list all books
 def list_books(request):
