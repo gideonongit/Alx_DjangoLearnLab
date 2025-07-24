@@ -15,3 +15,4 @@ urlpatterns += [
     path("logout/", logout_view, name="logout"),
     path("register/", register_view, name="register"),
 ]
+views.register", "LogoutView.as_view(template_name=", "LoginView.as_view(template_name=
