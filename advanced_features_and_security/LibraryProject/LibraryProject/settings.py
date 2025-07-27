@@ -98,3 +98,37 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'bookshelf.User'
 
 bookshelf.CustomUser
+
+# settings.py
+
+# SECURITY WARNING: don’t run with debug turned on in production!
+DEBUG = False
+
+# SECURITY: Browser protection
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = 'DENY'
+
+# SECURITY: Cookies over HTTPS
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+# Content Security Policy Middleware
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'csp.middleware.CSPMiddleware',  # Make sure to install django-csp
+    ...
+]
+
+# SECURITY: Content Security Policy (CSP)
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'", 'https://fonts.googleapis.com')
+CSP_FONT_SRC = ("'self'", 'https://fonts.gstatic.com')
+CSP_SCRIPT_SRC = ("'self'",)
+
+# Add your installed apps
+INSTALLED_APPS = [
+    ...
+    'csp',  # Add django-csp
+]
+
