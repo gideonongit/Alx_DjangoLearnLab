@@ -132,3 +132,4 @@ INSTALLED_APPS = [
     'csp',  # Add django-csp
 ]
 
+SECURE_SSL_REDIRECT
