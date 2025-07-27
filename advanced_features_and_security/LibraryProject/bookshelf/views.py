@@ -11,3 +11,4 @@ def document_list(request):
 def edit_document(request, pk):
     doc = get_object_or_404(Document, pk=pk)
     # ...edit logic here...
+book_list
