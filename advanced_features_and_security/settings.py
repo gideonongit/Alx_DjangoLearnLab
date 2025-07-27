@@ -20,3 +20,5 @@ SECURE_BROWSER_XSS_FILTER = True
 # SECURITY: Turn off debug in production
 DEBUG = False
 ALLOWED_HOSTS = ['yourdomain.com']  # Update with your production domain
+
+SECURE_SSL_REDIRECT
