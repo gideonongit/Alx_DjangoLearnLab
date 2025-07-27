@@ -1,0 +1,3 @@
+# LibraryProject - Introduction to Django
+
+This repository contains the foundational setup...
