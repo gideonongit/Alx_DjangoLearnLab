@@ -26,3 +26,5 @@ def secure_search_view(request):
     if query:
         results = Book.objects.filter(title__icontains=query)
     return render(request, "bookshelf/book_list.html", {"results": results})
+
+from .forms import ExampleForm
