@@ -12,3 +12,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+from api.models import Author, Book
+from api.serializers import AuthorSerializer
+a = Author.objects.first()
+print(AuthorSerializer(a).data)
+
