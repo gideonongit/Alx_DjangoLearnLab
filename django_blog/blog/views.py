@@ -34,3 +34,6 @@ def profile(request):
     else:
         form = ProfileUpdateForm(instance=request.user)
     return render(request, "auth/profile.html", {"form": form})
+
+
+"ListView", "DetailView", "CreateView", "UpdateView", "DeleteView"
