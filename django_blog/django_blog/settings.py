@@ -8,7 +8,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+["USER", "PORT"]
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
