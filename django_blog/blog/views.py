@@ -127,3 +127,27 @@ def delete_comment(request, pk):
         comment.delete()
         return redirect("post_detail", pk=post_pk)
     return render(request, "blog/delete_comment.html", {"comment": comment})
+
+from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
+from .models import Post, Tag
+
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'blog/post_list.html', {'posts': posts})
+
+def post_by_tag(request, tag_name):
+    tag = get_object_or_404(Tag, name=tag_name)
+    posts = tag.posts.all()
+    return render(request, 'blog/post_list.html', {'posts': posts, 'tag': tag})
+
+def search_posts(request):
+    query = request.GET.get('q')
+    posts = Post.objects.all()
+    if query:
+        posts = posts.filter(
+            Q(title__icontains=query) |
+            Q(content__icontains=query) |
+            Q(tags__name__icontains=query)
+        ).distinct()
+    return render(request, 'blog/search_results.html', {'posts': posts, 'query': query})
