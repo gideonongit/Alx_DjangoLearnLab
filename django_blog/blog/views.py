@@ -5,6 +5,8 @@ def home(request):
     posts = Post.objects.all().order_by("-published_date")
     return render(request, "blog/home.html", {"posts": posts})
 
+["Post.objects.filter"]
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
