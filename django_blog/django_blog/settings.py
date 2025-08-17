@@ -11,6 +11,7 @@ ALLOWED_HOSTS = []
 # Tell Django where your templates live (keep APP_DIRS=True as well)
 TEMPLATES[0]["DIRS"] = [BASE_DIR / "templates"]
 
+"taggit"
 # Auth redirects
 LOGIN_REDIRECT_URL = "profile"     # after login
 LOGOUT_REDIRECT_URL = "login"      # after logout
