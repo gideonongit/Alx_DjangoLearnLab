@@ -8,6 +8,14 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Tell Django where your templates live (keep APP_DIRS=True as well)
+TEMPLATES[0]["DIRS"] = [BASE_DIR / "templates"]
+
+# Auth redirects
+LOGIN_REDIRECT_URL = "profile"     # after login
+LOGOUT_REDIRECT_URL = "login"      # after logout
+LOGIN_URL = "login"                # where @login_required sends users
+
 ["USER", "PORT"]
 INSTALLED_APPS = [
     "django.contrib.admin",
