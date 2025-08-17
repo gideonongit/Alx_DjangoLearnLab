@@ -19,7 +19,7 @@ class PostForm(forms.ModelForm):
                     tag, created = Tag.objects.get_or_create(name=tag_name)
                     instance.tags.add(tag)
         return instance
-
+["TagWidget()"]
 "TagWidget()"
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
