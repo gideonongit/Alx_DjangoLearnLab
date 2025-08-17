@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bookshelf',
     'relationship_app',
     'blog'
+    'django_blog'
 ]
 
 MIDDLEWARE = [
