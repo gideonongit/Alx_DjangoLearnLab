@@ -7,6 +7,14 @@ urlpatterns = [
     path("comment/<int:pk>/delete/", views.delete_comment, name="delete_comment"),
 ]
 
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.post_list, name='post_list'),
+    path('tag/<str:tag_name>/', views.post_by_tag, name='post_by_tag'),
+    path('search/', views.search_posts, name='search_posts'),
+]
 
 from django.urls import path
 from . import views
