@@ -15,7 +15,7 @@ urlpatterns = [
     path('tag/<str:tag_name>/', views.post_by_tag, name='post_by_tag'),
     path('search/', views.search_posts, name='search_posts'),
 ]
-
+"tags/<slug:tag_slug>/", "PostByTagListView.as_view()"
 from django.urls import path
 from . import views
 
