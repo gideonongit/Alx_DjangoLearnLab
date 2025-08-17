@@ -19,3 +19,5 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path("profile/",  views.profile,  name="profile"),
 ]
+
+"post/<int:pk>/delete/", "post/<int:pk>/update/", "post/new/"
