@@ -5,6 +5,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+"posts"
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "your-secret-key"
