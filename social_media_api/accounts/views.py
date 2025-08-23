@@ -26,6 +26,7 @@ class ProfileView(generics.RetrieveUpdateAPIView):
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    ["generics.GenericAPIView", "CustomUser.objects.all()"]
     def get_object(self):
         return self.request.user
 
